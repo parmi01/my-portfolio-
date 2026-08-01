@@ -104,6 +104,8 @@
     display:inline-block;padding:13px 26px;font-size:14px;font-weight:600;
     border-radius:var(--radius);letter-spacing:0.02em;
     transition:transform .15s, background .15s, color .15s;
+    cursor:pointer;
+    border:none;
   }
   .btn-primary{background:var(--gold);color:var(--navy);}
   .btn-primary:hover{background:#CDA05A;transform:translateY(-1px);}
@@ -160,7 +162,8 @@
   .project p{color:var(--text-soft);font-size:14px;flex-grow:1;margin-bottom:18px;}
   .project .stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
   .project .stack span{font-size:11px;background:var(--paper);padding:4px 8px;color:var(--slate);border-radius:var(--radius);}
-  .project a{font-size:13px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px;align-self:flex-start;}
+  .project-link{font-size:13px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px;align-self:flex-start;cursor:pointer;}
+  .project-link:hover{color:var(--gold);}
 
   /* EXPERIENCE / EDUCATION TIMELINE */
   .timeline{border-left:2px solid var(--line);padding-left:32px;position:relative;}
@@ -176,16 +179,6 @@
   .tl-item h3{font-size:19px;color:var(--navy);margin-bottom:4px;}
   .tl-item p{color:var(--text-soft);font-size:14px;}
 
-  /* CERTIFICATIONS */
-  .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
-  .cert{
-    background:var(--white);border:1px solid var(--line);
-    padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;
-  }
-  .cert h4{font-size:15px;color:var(--navy);margin-bottom:3px;}
-  .cert p{font-size:12.5px;color:var(--text-soft);font-family:'IBM Plex Mono',monospace;}
-  .cert .yr{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);white-space:nowrap;}
-
   /* CONTACT */
   footer#contact{
     background:var(--navy);color:var(--white);padding:80px 0 40px;
@@ -194,14 +187,15 @@
   .contact-grid h2{color:var(--white);font-size:34px;margin-bottom:14px;}
   .contact-grid p{color:#C9D2E0;font-size:16px;max-width:440px;}
   .contact-list{display:flex;flex-direction:column;gap:14px;}
-  .contact-list a{
+  .contact-item{
     display:flex;justify-content:space-between;align-items:center;
     padding:14px 18px;border:1px solid rgba(255,255,255,0.16);
     font-size:14px;transition:border-color .2s,background .2s;
+    cursor:pointer;
   }
-  .contact-list a:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
-  .contact-list a span:first-child{color:#8592A6;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.05em;}
-  .contact-list a span:last-child{color:var(--white);font-weight:500;}
+  .contact-item:hover{border-color:var(--gold);background:rgba(255,255,255,0.03);}
+  .contact-item span:first-child{color:#8592A6;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.05em;}
+  .contact-item span:last-child{color:var(--white);font-weight:500;}
   .foot-bottom{padding-top:28px;display:flex;justify-content:space-between;font-size:12.5px;color:#7D889C;flex-wrap:wrap;gap:10px;}
 
   @media (max-width:860px){
@@ -225,7 +219,7 @@
 
 <nav>
   <div class="wrap">
-    <a href="#" class="brand">Parmitha <span>G S</span></a>
+    <a href="#home" class="brand">Parmitha <span>G S</span></a>
     <ul class="navlinks" id="navlinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -238,7 +232,7 @@
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="home">
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Portfolio · 2026</span>
@@ -266,7 +260,7 @@
     <div>
       <span class="eyebrow">About</span>
       <h2 style="font-size:30px;color:var(--navy);margin-bottom:18px;">A little about me</h2>
-      <p>I'm Parmitha G.S,a Computer Science and Engineering student at Panimalar Engineering College, Chennai. Passionate about building real-world solutions, I combine technical skills with a practical mindset and strong leadership. I enjoy turning ideas into impactful projects, embracing new challenges, and continuously learning to create technology that makes a difference..</p>
+      <p>I'm Parmitha G.S, a Computer Science and Engineering student at Panimalar Engineering College, Chennai. Passionate about building real-world solutions, I combine technical skills with a practical mindset and strong leadership. I enjoy turning ideas into impactful projects, embracing new challenges, and continuously learning to create technology that makes a difference.</p>
       <p>Through my internships and personal projects, I've built hands-on experience with Power BI, Python, and data analysis — and I'm always looking for the next dataset to dig into.</p>
     </div>
     <div class="about-stats">
@@ -321,12 +315,12 @@
       </div>
       <div class="tl-item">
         <div class="when">2nd Year · 3 Months</div>
-        <h3>Python & Data Analysis intern</h3>
+        <h3>Python & Data Analysis Intern</h3>
         <p>Edu Tanter, Bangalore — Applied Python for data analysis over a 3-month internship.</p>
       </div>
       <div class="tl-item">
-        <div class="when">3rd Year . 15 days</div>
-        <h3>Data Science intern</h3>
+        <div class="when">3rd Year · 15 Days</div>
+        <h3>Data Science Intern</h3>
         <p>Inertz Technologies, Vadapalani — Worked on data science tasks and projects.</p>
       </div>
     </div>
@@ -346,21 +340,21 @@
         <h3>Ecommerce Sales Dashboard</h3>
         <p>An interactive Power BI dashboard analyzing ecommerce sales across states, categories, payment modes, and sub-categories, with quarterly profit trends and key KPIs like sales, quantity, profit, and AOV.</p>
         <div class="stack"><span>Power BI</span><span>DAX</span><span>Data Visualization</span></div>
-        <a href="#">View Project →</a>
+        <span class="project-link" onclick="alert('Project link will be added soon!')">View Project →</span>
       </div>
       <div class="project">
         <div class="tag">Data Analytics</div>
         <h3>Walmart Sales Dashboard</h3>
         <p>A Power BI dashboard exploring Walmart sales data by region, segment, product, and sub-category, with country-level filtering and profit/sales trend analysis across product lines.</p>
         <div class="stack"><span>Power BI</span><span>DAX</span><span>Data Visualization</span></div>
-        <a href="#">View Project →</a>
+        <span class="project-link" onclick="alert('Project link will be added soon!')">View Project →</span>
       </div>
       <div class="project">
         <div class="tag">Data Analytics</div>
         <h3>Fashion Sale Dashboard</h3>
         <p>A Power BI dashboard tracking fashion retail sales — purchases by item, customer trends, monthly purchase averages, and review ratings by year and payment method.</p>
         <div class="stack"><span>Power BI</span><span>DAX</span><span>Data Visualization</span></div>
-        <a href="#">View Project →</a>
+        <span class="project-link" onclick="alert('Project link will be added soon!')">View Project →</span>
       </div>
     </div>
   </div>
@@ -381,7 +375,7 @@
       <div class="tl-item">
         <div class="when">2020 — 2024</div>
         <h3>Higher Secondary (Class XII)</h3>
-        <p>Mahabharathi International School — Percentage:68</p>
+        <p>Mahabharathi International School — Percentage: 68%</p>
       </div>
     </div>
   </div>
@@ -395,9 +389,18 @@
       <p>I'm open to internships, collaborations, and interesting problems to solve. Reach out — I usually reply within a day.</p>
     </div>
     <div class="contact-list">
-      <a href="mailto:parmitha@example.com"><span>EMAIL</span><span>parmitha@example.com</span></a>
-      <a href="https://github.com/" target="_blank"><span>GITHUB</span><span>github.com/parmitha</span></a>
-      <a href="https://linkedin.com/" target="_blank"><span>LINKEDIN</span><span>linkedin.com/in/parmitha</span></a>
+      <div class="contact-item" onclick="window.location.href='mailto:parmithags@gmail.com'">
+        <span>EMAIL</span>
+        <span>parmithags@gmail.com</span>
+      </div>
+      <div class="contact-item" onclick="window.open('https://github.com', '_blank')">
+        <span>GITHUB</span>
+        <span>github.com/parmitha</span>
+      </div>
+      <div class="contact-item" onclick="window.open('https://linkedin.com', '_blank')">
+        <span>LINKEDIN</span>
+        <span>linkedin.com/in/parmitha</span>
+      </div>
     </div>
   </div>
   <div class="wrap foot-bottom">
